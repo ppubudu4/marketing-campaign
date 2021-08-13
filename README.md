@@ -9,5 +9,5 @@ In the project directory, you can run:
 ## Login Details
 
 Username : pubudu
-\
+<br />
 Password : Test@#123
