@@ -1,7 +1,7 @@
 {
   "login": {
     "username": "pubudu",
-    "password": "test@123"
+    "password": "Test@#123"
   },
   "tasks": [
     {
@@ -21,24 +21,6 @@
       "task": "Customer stories finalized",
       "priority": "low",
       "complete": false
-    },
-    {
-      "task": "Create Task",
-      "priority": "Med",
-      "complete": false,
-      "id": 4
-    },
-    {
-      "task": "Create Todo",
-      "priority": "High",
-      "complete": false,
-      "id": 5
-    },
-    {
-      "task": "Test Tast",
-      "priority": "Low",
-      "complete": false,
-      "id": 6
     }
   ]
 }

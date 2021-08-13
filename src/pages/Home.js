@@ -4,6 +4,7 @@ import ListItem from '../components/layout/ListItem';
 import TaskAdd from '../components/layout/TaskAdd';
 import PropTypes from 'prop-types';
 import { getTasks, addTask, updateTask } from '../redux/actions/taskActions';
+import Navigation from '../components/layout/Navigation';
 
 const Home = ({ getTasks, taskState, addTask, updateTask }) => {
   //state
@@ -32,6 +33,7 @@ const Home = ({ getTasks, taskState, addTask, updateTask }) => {
   };
   return (
     <>
+      <Navigation />
       <div style={{ height: '8rem' }} />
       <div className='card-main'>
         <div className='card'>

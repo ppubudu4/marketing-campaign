@@ -1,11 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Fragment } from 'react';
-import { Button, Card, Col, Form } from 'react-bootstrap';
+import { Alert, Button, Card, Col, Form } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import FormInput from '../components/layout/FormInput';
+import PropTypes from 'prop-types';
+import { login, clearError } from '../redux/actions/authAction';
+import { useHistory } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ login, clearError, auth }) => {
+  //state
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  let history = useHistory();
+
+  //timeout error
+  useEffect(() => {
+    if (auth.error !== null) {
+      setTimeout(() => {
+        clearError();
+      }, 2000);
+    }
+  }, [auth.error]);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +29,7 @@ const Login = () => {
       username: username,
       password: password,
     };
-    console.log(data);
+    login(data, history);
   };
   const input = [
     {
@@ -33,6 +49,7 @@ const Login = () => {
       setValue: setPassword,
     },
   ];
+
   return (
     <Fragment>
       <Col
@@ -45,15 +62,28 @@ const Login = () => {
               {input?.map((item, index) => {
                 return <FormInput key={index} {...item} />;
               })}
+              {auth.error !== null && (
+                <Alert variant='danger'>{auth.error}</Alert>
+              )}
               <Button variant='primary' type='submit'>
                 Submit
               </Button>
             </Form>
+            <blockquote className='mt-3'>
+              Username: pubudu {' | '} Password: Test@#123
+            </blockquote>
           </Card.Body>
         </Card>
       </Col>
     </Fragment>
   );
 };
-
-export default Login;
+Login.prototype = {
+  login: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  clearError: PropTypes.func.isRequired,
+};
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+export default connect(mapStateToProps, { login, clearError })(Login);
