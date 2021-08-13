@@ -4,6 +4,10 @@
 
 In the project directory, you can run:
 
+### `npm install`
+
+Then
+
 ### `npm run dev`
 
 ## Login Details
