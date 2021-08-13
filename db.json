@@ -1,23 +1,44 @@
-{ 
-    "login":{
-        "username": "pubudu",
-        "password" :"test@123"
+{
+  "login": {
+    "username": "pubudu",
+    "password": "test@123"
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "task": "Campaing creative concept",
+      "priority": "Med",
+      "complete": false
     },
-    "tasks":[
-        {
-            "id": 1,
-            "task":"Campaing creative concept",
-            "priority":"Med"
-        },
-        {
-            "id": 2,
-            "task":"Media Plan",
-            "priority":"High"
-        },
-        {
-            "id": 3,
-            "task":"Customer stories finalized",
-            "priority":"low"
-        }
-    ]
+    {
+      "id": 2,
+      "task": "Media Plan",
+      "priority": "High",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "task": "Customer stories finalized",
+      "priority": "low",
+      "complete": false
+    },
+    {
+      "task": "Create Task",
+      "priority": "Med",
+      "complete": false,
+      "id": 4
+    },
+    {
+      "task": "Create Todo",
+      "priority": "High",
+      "complete": false,
+      "id": 5
+    },
+    {
+      "task": "Test Tast",
+      "priority": "Low",
+      "complete": false,
+      "id": 6
+    }
+  ]
 }
